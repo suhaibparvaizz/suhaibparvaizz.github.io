@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Aidah</title>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#070707;
+    color:#F2EDE7;
+    font-family:Georgia,serif;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.85) 1px,transparent 2px),
+    radial-gradient(circle at 75% 15%,rgba(255,255,255,.55) 1px,transparent 2px),
+    radial-gradient(circle at 55% 80%,rgba(255,255,255,.75) 1px,transparent 2px),
+    radial-gradient(circle at 35% 70%,rgba(255,255,255,.45) 1px,transparent 2px);
+
+    background-size:280px 280px;
+
+    opacity:.23;
+
+    animation:stars 45s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes stars{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-120px);
+}
+
+}
+
+.page{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+transition:opacity .8s ease;
+
+}
+
+.container{
+
+max-width:760px;
+
+text-align:center;
+
+}
+
+.tag{
+
+letter-spacing:8px;
+
+font-size:15px;
+
+opacity:.75;
+
+margin-bottom:34px;
+
+}
+h1{
+
+font-weight:400;
+
+font-size:clamp(44px,7vw,74px);
+
+line-height:1.08;
+
+}
+
+.description{
+
+margin-top:40px;
+
+font-size:clamp(18px,2.6vw,28px);
+
+line-height:1.75;
+
+color:#D7CFC6;
+
+}
+
+#openLetter{
+
+display:inline-block;
+
+margin-top:60px;
+
+padding:16px 38px;
+
+border-radius:999px;
+
+border:1px solid #8E8478;
+
+cursor:pointer;
+
+opacity:0;
+
+transition:.5s;
+
+user-select:none;
+
+}
+
+#openLetter.show{
+
+opacity:1;
+
+}
+
+#openLetter:hover{
+
+background:#F2EDE7;
+
+color:#111;
+
+}
+
+#heyPage{
+
+display:none;
+
+height:100vh;
+
+justify-content:center;
+
+align-items:center;
+
+animation:fade 1s ease;
+
+}
+
+#hey{
+
+font-size:68px;
+
+font-weight:400;
+
+letter-spacing:1px;
+
+}
+
+#intro{
+
+display:none;
+
+height:100vh;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px;
+
+animation:fade 1s ease;
+
+}
+
+.introBox{
+
+max-width:720px;
+
+margin:0 auto;
+
+}
+
+.introBox h2{
+
+font-size:54px;
+
+font-weight:400;
+
+margin-bottom:28px;
+
+}
+
+.introBox p{
+
+font-size:22px;
+
+line-height:1.9;
+
+color:#DDD5CC;
+
+text-align:left;
+
+}
+
+.pageHeading{
+
+font-size:14px;
+
+letter-spacing:6px;
+
+text-transform:uppercase;
+
+opacity:.6;
+
+margin-bottom:30px;
+
+text-align:center;
+
+}
+
+.letterPage{
+
+display:none;
+
+min-height:100vh;
+
+padding:120px 40px;
+
+opacity:0;
+
+transition:opacity .8s ease;
+
+}
+
+.nextBtn{
+
+display:inline-block;
+
+margin-top:60px;
+
+padding:16px 38px;
+
+border-radius:999px;
+
+border:1px solid #8E8478;
+
+cursor:pointer;
+
+transition:.35s;
+
+user-select:none;
+
+}
+
+.nextBtn:hover{
+
+background:#F2EDE7;
+
+color:#111;
+
+}
+
+.scroll{
+
+margin-top:60px;
+
+text-align:center;
+
+opacity:.45;
+
+letter-spacing:4px;
+
+font-size:18px;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="page" id="cover">
+
+    <div class="container">
+
+        <div class="tag">
+            FOR AIDAH.
+        </div>
+
+        <h1>
+            Before you read this.
+        </h1>
+
+        <div class="description">
+
+            This may make you angry or sad.
+
+            <br><br>
+
+            I didn't want to send something this heavy on your birthday, but I couldn't find another way.
+
+            <br><br>
+
+            If you choose to read it today, I just hope it doesn't take away from your celebrations.
+
+        </div>
+
+        <div id="openLetter">
+
+            Open Letter →
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="heyPage">
+
+    <div id="hey">
+
+        Hey.
+
+    </div>
+
+</div>
+
+
+
+<div id="wellPage" style="display:none; height:100vh; justify-content:center; align-items:center; transition:opacity .8s ease;">
+
+    <div id="wellText" style="font-size:clamp(28px,4vw,42px); font-weight:400; letter-spacing:1px; text-align:center; max-width:700px; padding:0 30px;">
+
+        i hope your are fine and doing well
+
+    </div>
+
+</div>
+
+
+
+<div id="intro">
+
+    <div class="introBox">
+
+        <h2>
+
+            Hey.
+
+        </h2>
+
+        <p style="text-align:center;">
+
+            ye koi birthday letter nahi h.
+
+            <br><br>
+
+            its the things i have been holding inside me
+            for so long.
+
+            <br><br>
+
+            im sorry to send this on your birthday
+            but koi aur way tha he nahi.
+
+        </p>
+
+        <div class="scroll">
+
+            <div id="nextPage" class="nextBtn">
+
+    Next →
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page2" class="letterPage">
+
+    <div class="introBox">
+
+        <div class="pageHeading">Since You Left</div>
+
+        <p style="text-align:center;">
+
+            idk where to start from.
+
+            <br><br>
+
+            keep this musaib wala masla aside for sometime aidah.
+
+            <br><br>
+
+            its been 293 days 22 hours since you left.
+
+            <br><br>
+
+            im writing this on 25 july.
+
+        </p>
+
+        <div style="text-align:center;">
+            <div id="nextFromPage2" class="nextBtn">
+
+                Next →
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page3" class="letterPage">
+
+    <div class="introBox">
+
+        <div class="pageHeading">Things I Questioned Myself</div>
+
+        <p>
+
+            merai dimag mei bas aik he cheez roz ati h wo ye ki aisa kya hua ki apko wo sbh karna pdha, mainai kya aisa kiya aidah ki mujhe aik jhoot bolke choda gaya. aidah kya meri value bas aik jhoot ki thi, after everything, be it my efforts, my love, my care aur b bohat sari chezai, were they only worth a lie? hote tumharai reasons, but at least you could have told me, har baar tou jate thena keh k, he tou is baar aik baar b nahi soncha ki suhaib kya krega.
+
+            <br><br>
+
+            wo b chodo aidah, you blamed me ki mainai ulti sedhi baatein ki thi chat mei, jo apki mama nai pdhi. seriously aidah mtlb aik baar b nahi soncha mujhpe kya beetaigai, us insan pe kya beetaigai jo was just there to give you and never expected anything in return. there is not a single day jaha mai khud ko qs na kru ki suhaib, were you really worthless, was your worth bs aik jhoot ki.
+
+            <br><br>
+
+            after you left I even had to speak to Tele-MANAS and they recommended therapy, waisai fayida kya, tumhe tou ye b jhoot he lagaiga na. my mama still asks me about you, unko mainai abhi tak nahi kaha h ki ap kabh k chalai gayai hou, kis muh se kahu aidah. mainai tumharai liye saba tak k samne roya aidah, mainai uske samne tak apni self respect nahi rakhi, bas tumharai liye.
+
+            <br><br>
+
+            jabh 12th ka result aya i was so happy to see you achieve that position, my mama even said ki aidah ko meri taraf se b congratulations kehna, haha. whenever i smile or laugh or jo koi b cheez jisse mai khush jaisa hojata hu, i feel like kya mai b khush ho skta hu? i start to qs myself kyuki i never felt the emotion of happiness again after you, jaisai you took something from inside me w you.
+
+            <br><br>
+
+            aur 1 mahine pehle when i texted you, ik you hate me aidah, mujhe pta h tumhe bht hurt hua h.
+
+        </p>
+
+        <div style="text-align:center;">
+            <div id="nextFromPage3" class="nextBtn">
+
+                Next →
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page4" class="letterPage">
+
+    <div class="introBox">
+
+        <div class="pageHeading">The Day I Felt Like a Stranger</div>
+
+        <p>
+
+            seeing you talk w me like that, jaisai mai koi stranger hu, made me think, kya ye wohi aidah h who was my home, kya ye wohi aidah h jisse mai be jijak kch b baat karta tha, fazool se fazool baat, kya ye wohi aidah h jisse baat krke mai sbh sitam dukh bhool jata tha. and the same place which felt like home, felt like i was a stranger sitting outside the door of that very home.
+
+            <br><br>
+
+            yk when you started sending me the snaps, like some people only act nice etc etc, wo 1-2, i genuinely was clueless ki ye sbh aidah kyu bej rhi h, i even sent you a snap back saying "every action has a reason" if you remember, cause i thought maybe tumhe kch lga hou, and mujhe pta tha agr kuch hoga bhi mainai sonch smjh k he kiya hoga, mujhe nahi pta tha tumne musaib se baat ki h. i was in jammu us result k wqt wali baat k time bw you n musaib, uske badh jbh 6th april ko ig you removed me on sc and blocked me sbh jagah.
+
+            <br><br>
+
+            i was in shock ki wth happened to her, ye achanak aidah ko kya hogaya. i called sarim, usko kaha ki khn chn mei beth tai h, usko nahi kaha tha mainai kch, but mai us time akele nahi reh skta tha so we went to khn chn. pta nahi allah ka kya mansha tha, out of nowhere jamie muiz aur musaib b udhr aagye and musaib seedhai upr aagaya and jbh ham abh bethe i was stressed, musaib noticed and usko pta he hoga kya baat h, tumne tou sabh keh diya tha use, he was enjoying seeing me in pain, i could feel and see it in his eyes.
+
+            <br><br>
+
+            wo sarim se baat krne lga and usne tumhari baat uthayi, mainai kal aidah se baat ki raat bhar, mujhe pta chal gayi na ye raita kisne failaya, warna aidah mujhe block tou nahi kregi jbh tak kch bht zyada khatarnakh nahi hua, aidah aisa nhi kregi. abh ham gye ghr wagera, mainai sarim ko call ki and guess what, musaib sarim k sath bijebehara tak gya tha and usne sbh kch kaha tha use, sarim nai jbh ye sbh bataya, merai pairo talai zameen khisak gyi istg, kyuki even sarim was shocked ki koi itna zyada harami kaisai ho skta.
+
+        </p>
+
+        <div style="text-align:center;">
+            <div id="nextFromPage4" class="nextBtn">
+
+                Next →
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page5" class="letterPage">
+
+    <div class="introBox">
+
+        <div class="pageHeading">What Hurt the Most</div>
+
+        <p>
+
+            waha musaib he mt tha, srf tumse baat kr rha, wo 3 the, as i told you pichle mahine, us wqt pta h mujhe kya bura lga, ye nahi ki musaib nai aisa kiya, wo tou aisa he h, is cheez se dil k tukde hogaye ki you believed every single thing he told you aidah. aik bar mujhse pooch nahi skte the, ha ik tumne kand kiya tha kaisai msg krte, but still aidah you believed every freaking thing he told you.
+
+            <br><br>
+
+            aik baar b dil mei aisa nhi hua ki kya sahi mei yeh sch h sbh kuch? kya kaha pichle mahine apne, i dont trust musaib either, kitna contradictory h na ye, if you didn't believe musaib tou meri har baat jo usne kahi tumne maan li? ya tou pehle se he you never trusted me, but wo nahi ho skta phr bura he nahi lgta apko ik you trusted me a lot, but this was something that i couldn't believe.
+
+            <br><br>
+
+            you believed a third person who knew nothing about you and me, who knew nothing about my life, the only thing he knew was suhaib se badla lena h aur uska weak spot h "aidah". us wat ye tou confirm hogaya mujhe ki i never mattered enough to be questioned. jbh mainai musaib ki pol kholi, you asked him tumne aisa kyu kiya and removed him, or jaisa mainai suna usne he kiya h apko remove.
+
+            <br><br>
+
+            ye mai he hu jisne kbhi zor se baat nahi ki apse, tried to understand every little thing about you, and honestly? im proud of myself for that. aur merai wqt you didn't even care to ask me, you asked musaib, mujhe remove krna h ya nahi, aidah seriously tumne aik teesrai insan ko decision lene diye. ye tou chodo, you didnt even wish me on my birthday, aidah yk how much i have cried on my birthday.
+
+            <br><br>
+
+            i loved to celebrate your birthday because i never got a chance to be w you on mine, i used to find that happiness in your birthday and i wasnt even worth a wish. itna sabh hone k badh shouldn't i hate you, but ykw i can never hate you, ya i hated you for sometime, that was not hate, it was disappointment.
+
+        </p>
+
+        <div style="text-align:center;">
+            <div id="nextFromPage5" class="nextBtn">
+
+                Next →
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page6" class="letterPage">
+
+    <div class="introBox">
+
+        <div class="pageHeading">Things I Kept to Myself</div>
+
+        <p>
+
+            when you left me like that, but eventually i was back at the same place where i was before. you left me, mujhe aik sawal h, apni surgery fake krne se mujhe milta kya? logically soncho mujhe kya fayida tha aidah? mujhe nahi pta tha kya ki tumhe jhoot se kitni nafrat h? itni bar you left me and everytime in exchange of love all i got was pain and suffering, did i give up aidah? kyuki mujhe pta tha its your trauma doing all this, and you think i fooled you for 4 years, itni disrespect itna pain itni zillat i faced and i still was trying to give you everything i possibly could us sbh ke bawajood, and i fooled you?
+
+            <br><br>
+
+            aik baat kahu, tumhe kuch bhi yaad nahi raha aidah, tumhe aik cheez yaad nahi rahi which makes me disappointed, wanna know how much you meant to me, let me tell you a secret. remember your birthday last year, i gave you gifts n all, usss 4 moths pehle I told you about the losses we faced due to the rate change wagera, I had pi coins that I had told you that you think are also a lie, the thing about them is, they were not disturbed on the crypto market yet, so i couldn't withdraw money from it, neither I could have asked my father for money because of the losses, and I never ask my mother for money.
+
+            <br><br>
+
+            just think, I had no money for four months, but your bday was only some months away, i started saving each and every rupee that i could, be it eids, be it koi rishtedar de chocolate k liye, i saved around 30-35 till july. there was a problem, I had to spend some money for something that was really important for me, i mean really really important for me, so i guess i spent around 25,000 on that thing, and yeah, that was the makeup bouquet i had bought for you, jo mai de he nhi skta tha.
+
+            <br><br>
+
+            I have not bought a single thing for myself for four months. My Mama used to say me buy some things for yourself, I will give the money, but I always refused because I never ever take money from my mother, I feel like i am becoming a burden. I used to see junk food and wanted to get them but i resisted, i didn't even eat a chocolate, you know how much i love chocolate, i didn't eat a single chocolate because i thought these ₹50 ₹60 eventually add up and i will be able to get things for you. and you think i fooled you, hah, i never was a liar.
+
+        </p>
+
+        <div style="text-align:center;">
+            <div id="nextFromPage6" class="nextBtn">
+
+                Next →
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page7" class="letterPage">
+
+    <div class="introBox">
+
+        <div class="pageHeading">What I Never Said Out Loud</div>
+
+        <p>
+
+            mainai jo b kiya h tumhe hamesha kaha h, baat rahi wo free hone wali baat ki, mainai wo is liye chupayi kyuki i was afraid ki how you would react, kya pta you leave me, thats why i never told you about that, and sahi mei what i told you ki mainai wo kyu kahi, wohi reason h. but i should apologise us cheez k liye, apne barose se kahi thi, abh gusse mei ya jaisai b, but it was wrong, i am sorry, i hope you will forgive me.
+
+            <br><br>
+
+            everytime i did something for you i did it out of love because i cared, because you matterd aidah, the bond we had be it 8th wala be it 11-12th wala, it matterd to me more than anything, and i trusted you, aur is sbh k badle mujhe jhoot bolke choda gaya, is sbh k bdle kisi aur ki baat sun k barosa krke ki mai bura tha jhootha tha, khud ki glti koi nhi dekhta.
+
+            <br><br>
+
+            aidah aik cheez dekhi, even after everything that happened, after how you left me, didnt even wish me, i still wished you, i still am writing this for you and believe me my eyes are full of tears rn, kyuki when you left, you didnt just break me, you broke the future i had in my head, the things i had imagined w you, wo sbh b bhikar gya.
+
+        </p>
+
+        <div style="text-align:center;">
+            <div id="nextFromPage7" class="nextBtn">
+
+                Next →
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="page8" class="letterPage">
+
+    <div class="introBox">
+
+        <div class="pageHeading">You Mattered</div>
+
+        <p>
+
+            uff, aik baat kahu, idk if you will believe me or not, i think you thought i changed, janai se pehle ig, but pta h kya aidah, i was stressed a lot, i was getting serious about you, shock mt hona, mai nhi keh rha usse pehle nahi tha, i mean i was thinking about the future, about agai kya krna h, abh mujhe tumhe hamesha khush rkhna h, smjh jao what i mean. you thought i started to take you for granted, but actually it was the quite opposite, and ykw i was waiting for the day when i feel yes abh aidah nahi jayegi, and ap hamesha kehte thena, suhaib baat krna thkk nahi h, i was just waiting ki kbh, i was sure now you are not going anywhere, aagya tha 99% barosa mujhe ending august tak, but september mei you completely changed, you started to act distant.
+
+            <br><br>
+
+            aur tumhe kya lgta h, idk ki ap khud ko detach kr rhe the mujhse, mujhe pta tha shyd you are leaving me, but i was not sure, isilye when you left me i was so shocked, i didnt even speak to you jbh tumhara jhoot pkda mainai, kyuki i was so in shock ki idk mai kya kya keh deta tumhe, isiliye mai chup he rha taki tumhe hurt na hou. ham nahi krte phr baat, agar mai 100% sure hojata kyuki tumhe sahi nhi lgta tha tou aur agr mai ho b jata sure, surgery k badh he mai keh deta apko ki abh ham baat nahi krengai, i had so many plans aidah, it kills me to think about those plans.
+
+            <br><br>
+
+            Im struggling to understand how someone I loved this much could believe I never meant it, yk after you left my anxiety came back and it came back stronger, and yeah aik cheez kahu, i loved your hair jbh katai the apne, kitna weird h na aisi message mei mai ye keh rha hu. another thing, i never ever involved you in merai kisi masle mei, im just saying this agr apko laga hou, yeh sbh batein jo i said, these are all the things i use to say when im alone and trying to understand what happened.
+
+            <br><br>
+
+            i yesterday remembered how happy i was on your bday last year, yeh wqt kaisai palat jata h na, aur pta h mujhe pta h ap kyu chalai jatai thai bar bar, apka avoidant attachment style h thats why. in sabh batoun ka kya fayida h abh, anyways happy 19th birthday aidah ❤️, may this year bring a lot of happiness in your life, i always pray for you.
+
+            <br><br>
+
+            aur haa, i dont understand why do you think i act like im perfect, its just ki after i fell for you i changed myself sar se pau tak to be the best person for you, and i never wanted to be perfect because no one can be perfect, sbh k flaws hote h, idk why you think like that. aur aidah, dusro ki batoun ko nahi, khud ki batoun pe barosa kiya kro, jo tumhe sahi lag raha hou, logo ko bs chezai bigadni ati h yaar, jo ap khud dekho uspe barosa kro.
+
+            <br><br>
+
+            if you read this upto this then,
+            <br>
+            Thankyou ❤️
+            <br>
+            Take Care
+
+        </p>
+
+        <div style="text-align:center;">
+            <div id="nextFromPage8" class="nextBtn">
+
+                Next →
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="endText1" style="display:none; height:100vh; justify-content:center; align-items:center; opacity:0; transition:opacity .8s ease; background:#070707;">
+
+    <div style="font-size:clamp(32px,5vw,52px); font-weight:400; letter-spacing:1px; text-align:center; padding:0 30px;">
+
+        Happy Birthday, Aidah.
+
+    </div>
+
+</div>
+
+<div id="endText2" style="display:none; height:100vh; justify-content:center; align-items:center; opacity:0; transition:opacity .8s ease; background:#070707;">
+
+    <div style="font-size:clamp(28px,4vw,42px); font-weight:400; letter-spacing:2px; text-align:center;">
+
+        Suhaib
+
+    </div>
+
+</div>
+
+<div id="finalBlack" style="display:none; height:100vh; background:#000;"></div>
+
+<script>
+
+const openButton = document.getElementById("openLetter");
+
+setTimeout(() => {
+    openButton.classList.add("show");
+}, 2500);
+
+openButton.addEventListener("click", () => {
+
+    const cover = document.getElementById("cover");
+
+    cover.style.opacity = "0";
+
+    setTimeout(() => {
+
+        cover.style.display = "none";
+
+        const heyPage = document.getElementById("heyPage");
+
+        heyPage.style.display = "flex";
+
+        setTimeout(() => {
+
+            heyPage.style.opacity = "0";
+
+            setTimeout(() => {
+
+                heyPage.style.display = "none";
+
+                const wellPage = document.getElementById("wellPage");
+
+                wellPage.style.display = "flex";
+
+                void wellPage.offsetWidth;
+
+                wellPage.style.opacity = "1";
+
+                setTimeout(() => {
+
+                    wellPage.style.opacity = "0";
+
+                    setTimeout(() => {
+
+                        wellPage.style.display = "none";
+
+                        document.body.style.overflow = "auto";
+
+                        document.getElementById("intro").style.display = "flex";
+
+                    }, 800);
+
+                }, 1800);
+
+            }, 700);
+
+        }, 1800);
+
+    }, 800);
+
+});
+
+function goToNext(currentId, nextId){
+
+    const current = document.getElementById(currentId);
+
+    const next = document.getElementById(nextId);
+
+    current.style.opacity = "0";
+
+    setTimeout(() => {
+
+        current.style.display = "none";
+
+        next.style.display = "block";
+
+        window.scrollTo(0,0);
+
+        // force the browser to register display:block before we animate opacity
+        void next.offsetWidth;
+
+        next.style.opacity = "1";
+
+    }, 700);
+
+}
+
+document.getElementById("nextPage").addEventListener("click", () => {
+
+    const intro = document.getElementById("intro");
+
+    intro.style.transition = "opacity .8s ease";
+
+    intro.style.opacity = "0";
+
+    setTimeout(() => {
+
+        intro.style.display = "none";
+
+        const page2 = document.getElementById("page2");
+
+        page2.style.display = "block";
+
+        window.scrollTo(0,0);
+
+        void page2.offsetWidth;
+
+        page2.style.opacity = "1";
+
+    }, 700);
+
+});
+
+document.getElementById("nextFromPage2").addEventListener("click", () => {
+    goToNext("page2","page3");
+});
+
+document.getElementById("nextFromPage3").addEventListener("click", () => {
+    goToNext("page3","page4");
+});
+
+document.getElementById("nextFromPage4").addEventListener("click", () => {
+    goToNext("page4","page5");
+});
+
+document.getElementById("nextFromPage5").addEventListener("click", () => {
+    goToNext("page5","page6");
+});
+
+document.getElementById("nextFromPage6").addEventListener("click", () => {
+    goToNext("page6","page7");
+});
+
+document.getElementById("nextFromPage7").addEventListener("click", () => {
+    goToNext("page7","page8");
+});
+
+document.getElementById("nextFromPage8").addEventListener("click", () => {
+
+    const page8 = document.getElementById("page8");
+
+    page8.style.opacity = "0";
+
+    setTimeout(() => {
+
+        page8.style.display = "none";
+
+        const endText1 = document.getElementById("endText1");
+
+        endText1.style.display = "flex";
+
+        window.scrollTo(0,0);
+
+        void endText1.offsetWidth;
+
+        endText1.style.opacity = "1";
+
+        setTimeout(() => {
+
+            endText1.style.opacity = "0";
+
+            setTimeout(() => {
+
+                endText1.style.display = "none";
+
+                const endText2 = document.getElementById("endText2");
+
+                endText2.style.display = "flex";
+
+                void endText2.offsetWidth;
+
+                endText2.style.opacity = "1";
+
+                setTimeout(() => {
+
+                    endText2.style.opacity = "0";
+
+                    setTimeout(() => {
+
+                        endText2.style.display = "none";
+
+                        document.getElementById("finalBlack").style.display = "block";
+
+                    }, 800);
+
+                }, 1500);
+
+            }, 800);
+
+        }, 1500);
+
+    }, 800);
+
+});
+
+</script>
+
+</body>
+
+</html>
